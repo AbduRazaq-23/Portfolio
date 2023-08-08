@@ -1,14 +1,14 @@
-import About from "./Components/About";
-import ContactUs from "./Components/ContactUs";
-import Experience from "./Components/Experience";
-import Home from "./Components/Home";
-import Nav from "./Components/Nav";
-import Skills from "./Components/Skills";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
+import Experience from "./components/Experience";
+import Home from "./components/Home";
+import Navbar from "./components/navbar/Navbar";
+import Skills from "./components/Skills";
 
 function App() {
   return (
     <div>
-      <Nav />
+      <Navbar />
       <Home />
       <About />
       <Skills />
