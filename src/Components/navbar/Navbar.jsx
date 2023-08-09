@@ -9,7 +9,8 @@ import {
   FaLinkedin,
   FaFacebook,
 } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 const Nav = () => {
   const [Nav, setNav] = useState(false);
@@ -27,35 +28,40 @@ const Nav = () => {
         <ul className="hidden md:flex items-center font-bold ">
           {Menu.map((item) => {
             return (
-              <Link key={item.id} to={item.path} smooth={true} duration={500}>
+              <ScrollLink
+                key={item.id}
+                to={item.path}
+                smooth={true}
+                duration={500}
+              >
                 <li className="mx-3 hover:text-white cursor-pointer">
                   {item.title}
                 </li>
-              </Link>
+              </ScrollLink>
             );
           })}
         </ul>
       </div>
 
       <ul className="hidden md:flex ">
-        <li className="mx-3 hover:scale-125 ">
-          <a href="https://github.com/AbduRazaq-23" target="blank">
+        <RouterLink to="https://github.com/AbduRazaq-23" target="_blank">
+          <li className="mx-3 hover:scale-125 ">
             <FaGithub size={25} />
-          </a>
-        </li>
-        <li className="mx-3 hover:scale-125">
-          <a
-            href="https://www.linkedin.com/in/abdu-razaq-03a647277/"
-            target="blank"
-          >
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="https://www.linkedin.com/in/abdu-razaq-03a647277/"
+          target="_blank"
+        >
+          <li className="mx-3 hover:scale-125">
             <FaLinkedin size={25} />
-          </a>
-        </li>
-        <Link to="https://www.facebook.com/husta.alak">
+          </li>
+        </RouterLink>
+        <RouterLink to="https://www.facebook.com/husta.alak" target="_blank">
           <li className="mx-3 hover:scale-125">
             <FaFacebook size={25} />
           </li>
-        </Link>
+        </RouterLink>
       </ul>
 
       {/* Mobile  */}
@@ -71,31 +77,36 @@ const Nav = () => {
       >
         {Menu.map((item) => {
           return (
-            <Link key={item.id} to={item.path} smooth={true} duration={500}>
+            <ScrollLink
+              key={item.id}
+              to={item.path}
+              smooth={true}
+              duration={500}
+            >
               <li className="text-2xl  font-bold ml-5 py-3 ">{item.title}</li>
-            </Link>
+            </ScrollLink>
           );
         })}
 
         <ul className="flex">
-          <li className="m-5 hover:scale-125">
-            <a href="https://github.com/AbduRazaq-23" target="blank">
+          <RouterLink to="https://github.com/AbduRazaq-23" target="_blank">
+            <li className="m-5 hover:scale-125">
               <FaGithub size={30} />
-            </a>
-          </li>
-          <li className="m-5 hover:scale-125">
-            <a
-              href="https://www.linkedin.com/in/abdu-razaq-03a647277/"
-              target="blank"
-            >
+            </li>
+          </RouterLink>
+          <RouterLink
+            to="https://www.linkedin.com/in/abdu-razaq-03a647277/"
+            target="_blank"
+          >
+            <li className="m-5 hover:scale-125">
               <FaLinkedin size={30} />
-            </a>
-          </li>
-          <li className="m-5 hover:scale-125">
-            <a href="https://www.facebook.com/husta.alak" target="blank">
+            </li>
+          </RouterLink>
+          <RouterLink to="https://www.facebook.com/husta.alak" target="_blank">
+            <li className="m-5 hover:scale-125">
               <FaFacebook size={30} />
-            </a>
-          </li>
+            </li>
+          </RouterLink>
         </ul>
       </ul>
     </div>
